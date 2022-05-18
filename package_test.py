@@ -10,14 +10,17 @@ print(y)
 
 
 # from 패키지.모듈 import 함수, 클래스 (ex. from my_package.sum import sum_ab)
-# 이때 모든 py파일을 읽어와서, 그 안의 구문들을 모두 읽어온다.
-from my_package.sum import sum_ab, Calculator
+# 이때 모든 py파일을 읽어와서, 그 안의 구문들을 모두 읽어온다
+#
+from my_package.sum import sum_ab, Calculator, print_name
 from my_package.sub import sub_ab
 
 
-# __name__ ? => 현재 모듈의 이름을 담고 있는 내장 변수
+# __name__ ? => 현재 모듈의 이름을 담고 있는 (내장) 변수 -> 모듈의 이름이 저장되는 변수
 # 현재 모듈 이름은 package_test인데 왜 __main__?
 # -> 현재 실행한 파일 이름은 package_test라서 실제 모듈의 이름이 아닌 __main__이 담겨져있음
+# 즉, 스크립트 파일이 메인 프로그램으로 사용될 때와 모듈로 사용될 때를 구분하기 위한 용도입니다.
+# https://dojang.io/mod/page/view.php?id=2448
 if __name__ == '__main__':
     x2 = sum_ab(3, 4)
     y2 = sub_ab(4, 1)
@@ -25,5 +28,8 @@ if __name__ == '__main__':
 
     c = Calculator(1, 2)
     print(f"c.sum = {c.sum()}")
+
+    print(f"package_test.py의 __name__: {__name__}")
+    print_name()
 
 
