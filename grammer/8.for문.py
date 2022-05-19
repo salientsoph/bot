@@ -108,3 +108,5 @@ save_to_db(daily_stock_price[7])
 for item in daily_stock_price:
     save_to_db(item)
 
+
+

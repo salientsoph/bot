@@ -44,12 +44,13 @@ company = {
     'code_name': ('삼성전자', 'LG전자', 'SK텔레콤'),
     'close': ('55200', '71000', '234000')
 }
+type(company)
 print(company['code'])
 
 df_company = DataFrame(company)
 
 print(f"type(df_company): {type(df_company)} ")
-print(f"len: {len(df_company)}")
+print(f"len: {len(df_company)}") # 3개 행 (3개 칼럼)
 
 
 
@@ -70,7 +71,7 @@ loc:  iloc와 동일하게 DataFrame에 행, 열로 접근하는데 열의 경�
 
 print(f"df_company.loc[0, 'code'] :{df_company.loc[0, 'code']}, df_company.loc[0, 'code_name'] : {df_company.loc[0, 'code_name']}")
 
-# 위와 같이 코드가 길어지면 아래 처럼 수정 가능
+# 위와 같이 코드가 길어지면 아래 처럼 수정 가능 -> ''' 연속 3개 쓰면 여러 줄로 쓸 수 있음
 print(f'''df_company.loc[0, 'code'] :{df_company.loc[0, 'code']}, 
 df_company.loc[0, 'code_name'] : {df_company.loc[0, 'code_name']}''')
 
