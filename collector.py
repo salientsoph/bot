@@ -1,11 +1,10 @@
 print("collector 프로그램이 시작 되었습니다!")
-# crtl + alt + 좌우방향키 : 이전 커서 위치로
+# ctrl + alt + 좌우방향키 : 이전 커서 위치로
 
 # 아래 세줄 -> mysql이라는 데이터베이스를 사용하기 위해 필요한 패키지들 -> 암기X! 그냥 다음에 mysql을 사용하고 싶으면 아래 세 줄을 복사, 붙여넣기
 
 from sqlalchemy import create_engine
 import pymysql
-
 
 pymysql.install_as_MySQLdb()
 
@@ -21,7 +20,7 @@ class Collector:
         self.engine_bot = create_engine("mysql+mysqldb://" + db_id + ":" + db_passwd + "@"
                                         + db_ip + ":" + db_port + "/" + db_name, encoding='utf-8')
 
-#  __name__ ? => 현재 모듈의 이름을 담고 있는 내장 변수, 우리는 colector라는 파일을 실행한다! -> 이 파일의 __name__ 내장변수에는 __main__ 이 저장되어있다
+#  __name__ ? => 현재 모듈의 이름을 담고 있는 내장 변수, 우리는 collector라는 파일을 실행한다! -> 이 파일의 __name__ 내장변수에는 __main__ 이 저장되어있다
 # import openapi를 통해서 openapi소스코드를 참고를 하는 경우 openapi 모듈의 __name__은 "openapi" 가 저장 되어 있다.
 # openapi 파일을 실행하면 그때는 참고 한 것이 아니기 때문에 __name__에는 __main__ 이 저장 되어 있다.
 print("collector.py 의 __name__ 은?: ", __name__)
