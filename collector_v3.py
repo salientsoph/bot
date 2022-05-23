@@ -1,6 +1,10 @@
 # version 1.3.2
 # 매일 장마감 후 자동으로 데이터(종목리스트, 종목별 일별 데이터)를 수집함
 
+# from pympler import muppy
+# all_objects=muppy.get_objects()  # this causes pydev debugger exit with code -1073741819 (0xC0000005)
+
+
 print("collector 프로그램이 시작 되었습니다!")
 
 from library.collector_api import *
