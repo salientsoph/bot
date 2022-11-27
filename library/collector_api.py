@@ -22,7 +22,7 @@ MARKET_KOSDAQ = 10
 # 콜렉팅에 사용되는 메서드를 모아 놓은 클래스
 class collector_api():
     def __init__(self):
-        self.open_api = open_api() # 키움증권과 연동 + 키움증권에서 원하는 데이터 받음
+        self.open_api = open_api()
         self.engine_JB = self.open_api.engine_JB
         self.variable_setting()
         # self.kind = KINDCrawler()
@@ -36,7 +36,6 @@ class collector_api():
     # 콜렉팅을 실행하는 함수
     def code_update_check(self):
         logger.debug("code_update_check 함수에 들어왔습니다.")
-        # from setting_data limit 1:
         sql = "select code_update,jango_data_db_check, possessed_item, today_profit, final_chegyul_check, db_to_buy_list,today_buy_list, daily_crawler , min_crawler, daily_buy_list from setting_data limit 1"
 
         rows = self.engine_JB.execute(sql).fetchall()
@@ -44,7 +43,7 @@ class collector_api():
         # stock_item_all(kospi,kosdaq,konex)
         # kospi(stock_kospi), kosdaq(stock_kosdaq), konex(stock_konex)
         # 관리종목(stock_managing), 불성실법인종목(stock_insincerity) 업데이트
-        if rows[0][0] != self.open_api.today: # 오늘 날짜와 다르다면
+        if rows[0][0] != self.open_api.today:
             self.get_code_list()  # 촬영 후 일부 업데이트 되었습니다.
 
         # 촬영 후 콜렉팅 순서가 일부 업데이트 되었습니다.
@@ -60,7 +59,7 @@ class collector_api():
             self.open_api.db_to_possesed_item()
             self.open_api.setting_data_possesed_item()
 
-        # daily_craw db 업데이트 (일별 업데이트)
+        # daily_craw db 업데이트
         if rows[0][7] != self.open_api.today:
             self.daily_crawler_check()
 
