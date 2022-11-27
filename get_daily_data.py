@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import *
 import openapi
 
-
+# openApi로부터 주가 데이터를 가져오는 프로그램
 class get_daily_data():
     def __init__(self):
         self.api = openapi.Openapi()

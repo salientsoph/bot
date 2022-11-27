@@ -1,8 +1,29 @@
 print("collector 프로그램이 시작 되었습니다!")
 # ctrl + alt + 좌우방향키 : 이전 커서 위치로
 
-# 아래 세줄 -> mysql이라는 데이터베이스를 사용하기 위해 필요한 패키지들 -> 암기X! 그냥 다음에 mysql을 사용하고 싶으면 아래 세 줄을 복사, 붙여넣기
+# 아래 세줄 -> mysql이라는 데이터베이스를 사용하기 위해 필요한 패키지들 (mySQL <-> python 연동)
+# -> 암기X! 그냥 다음에 mysql을 사용하고 싶으면 아래 세 줄을 복사, 붙여넣기
 
+'''
+# 패키지 다운로드 방법
+# pip : 파이썬으로 작성된 패키지 소프트웨어를 설치하거나 관리하는 패키지 관리 시스템
+# 1. 아래 terminal 탭 클릭 후 -> pip install '원하는 패키지 이름'   (ex. pip install pymysql)
+# 2. 설치 된 모듈 리스트 : ctrl + alt + s (file -> setting ->project:bot -> python interpreter)
+
+/* 패키지 설치 */
+# pip install <package name>
+
+/* 설치된 패키지 업그레이드 */
+# pip install --upgrade <package name>
+
+/* 패키지 제거 */
+# pip uninstall <package name>
+
+/* 설치된 패키지 파일 목록 */
+# pip list
+
+
+'''
 from sqlalchemy import create_engine
 import pymysql
 
@@ -38,7 +59,7 @@ if __name__ == "__main__":
     # mysql db 패스워드
     db_passwd = '257204'
     # db port가 3306이 아닌 다른 port를 사용 하시는 분은 아래 변수에 포트에 맞게 수정하셔야 합니다.
-    db_port = '3306'
+    db_port = '3308'
 
     c.db_setting(db_name, db_id, db_passwd, db_ip, db_port)
 
