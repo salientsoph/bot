@@ -1,0 +1,6 @@
+
+1. 코드 비교
+해당 파일들을 ctrl해서 선택 -> 우클릭 compare the file(ctrl + d)
+
+2. 코드 비교 사이트
+https://www.diffchecker.com/

@@ -12,6 +12,9 @@ class StockItem():
     # 코스피 종목 리스트를 가져오는 메서드
     def get_item_kospi(self):
         print("get_item_kospi!!")
+
+        # read_html: 데이터를 가져오는 함수 (header=0 인 것들을 가져옴)
+        # 코스피 상장된 종목 리스트
         self.code_df_kospi = \
         pd.read_html('http://kind.krx.co.kr/corpgeneral/corpList.do?method=download&searchType=13&marketType=stockMkt',
                      header=0)[

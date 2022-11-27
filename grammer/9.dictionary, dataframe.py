@@ -2,7 +2,6 @@ print("\n*************************************ex1*******************************
 # Dictionary는 "키(Key) - 값(Value)" 쌍을 요소로 갖는 컬렉션이다
 company = {'삼성전자': '005930', 'LG전자': '066570'}
 
-
 print(f"company: {company} , type: {type(company)}")
 # 특정 key값의 value 출력
 print("삼성전자 : ", company['삼성전자'])
@@ -33,10 +32,10 @@ for v in values:
 
 
 
-
 print("\n*************************************ex4*************************************")
 # DataFrame ? => 행렬을 저장
 # pandas라는 모듈의 DataFrame 클래스를 import
+# pip install pandas
 from pandas import DataFrame
 
 company = {
@@ -44,7 +43,8 @@ company = {
     'code_name': ('삼성전자', 'LG전자', 'SK텔레콤'),
     'close': ('55200', '71000', '234000')
 }
-type(company)
+print(type(company))
+print('type(company[\'code\']): ', type(company['code'])) #tuple
 print(company['code'])
 
 df_company = DataFrame(company)
